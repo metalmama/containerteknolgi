@@ -1,0 +1,45 @@
+Notes
+
+This is how I set it up.
+
+Installed docker desktop for Windows (comes with docker compose)
+
+Define the application dependencies.
+
+In commmand prompt
+
+$ mkdir containerteknologi
+$ cd containerteknologi
+
+so the project directory it looks like this:
+
+Users\nightwitches\containerteknologi
+
+Create folder /flaskapp and /mysql in this location
+
+in directory /flaskapp create:
+
+app.py
+requirements.txt
+Dockerfile 
+
+in directory /mysql create:
+Dockerfile
+init.sql
+
+Go back to /containerteknologi directory and create:
+
+docker-compose.yml
+
+From my project directory (see above) start my application by running $ docker-compose up
+
+From another terminal window type docker image ls to list local images to check that it is all running
+
+Edit the compose file to include a definition of a mysql-service, a flaskapp-service, a volume and a network
+
+When I first tried to run it I could not get the flaskapp container to connect to the mysql container. 
+
+I figured that the problem was in the python code and attempted to run the app.py and the mysql locally on linux subsystem in Windows. 
+This also failed as the cursor command was not taking place within the app context and port number was supplied by a string.
+
+Sorted the code and then I could run the application. 
