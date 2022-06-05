@@ -1,0 +1,17 @@
+version: "2"
+services:
+  flaskapp:
+    build: ./flaskapp
+    links:
+      - mysql
+    ports:
+      - "5000:5000"
+    
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql

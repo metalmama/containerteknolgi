@@ -1,0 +1,11 @@
+For MySQL container since we did not create any Dockerfile, we will need to install the service manually that's why you see the line image: mysql:5.7 which install MySQL 5.7 server on the container. Here we are also adding some environment variables for MySQL password and name of the database that we are going to be using.
+
+In the end, we will define the directories we used and as well as networks.
+
+https://blog.abbasmj.com/dockerizing-flaskmysql-application-using-composeUsing Compose is basically a three-step process:
+
+Define your app’s environment with a Dockerfile so it can be reproduced anywhere.
+Define the services that make up your app in docker-compose.yml so they can be run together in an isolated environment.
+Run docker-compose up and Compose starts and runs your entire app.
+
+https://roytuts.com/docker-compose-dockerizing-flask-mysql-app/
